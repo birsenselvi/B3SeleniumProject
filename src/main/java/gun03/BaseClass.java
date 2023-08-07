@@ -12,9 +12,9 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class BaseClass {
 
-    WebDriver driver;
+    protected WebDriver driver;
 
-    BaseClass(){
+    public BaseClass(){
         driver = getDriver();
     }
 
