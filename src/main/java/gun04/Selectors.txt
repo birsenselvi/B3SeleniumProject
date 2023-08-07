@@ -1,0 +1,51 @@
+Selenium Locators
+
+By.id               :<a id='id1'>google icin tikla</a>                  : By.id("id1")
+By.className        :<a class='class1'>google icin tikla</a>            : By.className("class1")
+By.linkText         :<a id='id1' class='class1'>google icin tikla</a>   : By.linkText("google icin tikla")
+By.partialLinkText  :<a id='id1' class='class1'>google icin tikla</a>   : By.partialLinkText("google")
+By.tagName          :<a id='id1' class='class1'>google icin tikla</a>   : By.tagName("a")
+
+By.cssSelector      :By.cssSelector("*")
+By.xpath            :By.xpath("//*")
+
+
+
+xpath:
+    absolute path:  /html/body/div/../../a      -> / sayfa basindan baslar
+    relative path:  //                          -> // sayfanin herhangi bir yerinden baslar
+
+   cssSelector              xpath
+   -----------              ----------------------------
+   hizli                    cssSelector'e göre yavas
+   ileri hareket            ileri ve geri hareket vardir
+   # == id                  ----
+   . == class               . = aktif element demektir
+                            . = o elemenet ve altindakilerin toplam metni
+
+
+
+#   Aciklama                            cssSelector                         xpath
+--  -----------------------------       -----------------------             ---------------------------------
+1.  Tüm elementleri                     *                                   //*
+2.  Sayfadaki tüm E elementleri         E                                   //E
+3.  id attr. olan E elementleri         E[id]                               //E[@id]
+4.  A attr. olan E elementleri          E[A]                                //E[@A]
+5.  A='a' attr. olan E elementleri      E[A='a']                            //E[@A='a']
+6.  id='id1' olan E elementleri         E[id='id1']   = E#id1               //E[@id='id1']
+7.  id='id1' olan tüm elementleri       [id='id1']    = #id1                //*[@id='id1']
+8.  class='c1' olan E elementleri       E[class='c1'] = .c1                 //E[@class='c1']
+9.  class                               .navbar-toggler.navbar-toggler-right    //*[@class='navbar-toggler navbar-toggler-right']
+10. E1 elementinin altindaki olan E2
+    child (ilk baglisi>                 E1 > E2                             //E1/E2
+    altindakiler                        E1 E2                               //E1//E2
+10. text olan E elementi                ----                                //E[text()]
+11. text'i "ali" olan E elementi        ----                                //E[text()='ali']
+12. text'i "ali" iceren E elementi        ----                              //E[contains(text(),'ali')]
+13. class'i "ali" iceren E elementi                                         //E[contains(@class,'ali')]
+14. E elementlerinden 2. sirada olanlar                                     //E[2]
+16. E elementlerinden bastan 2. sirada olan                                 (//E)[2]
+
+
+
+

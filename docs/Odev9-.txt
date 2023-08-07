@@ -1,0 +1,21 @@
+Ödev-9  wait
+------------------------------------------------------------
+1. https://bonigarcia.dev/selenium-webdriver-java/
+2. "Loading images" linkine tikla
+3. cssSelector("#image-container #compass") olan elementin visible oldugunu assert et
+
+
+Ödev-10 wait
+------------------------------------------------------------
+1. git ->  http://uitestingplayground.com/
+2. "AJAX Data" linkine tikla
+3. "Playground" yazisi altindaki butonuna tiklayin
+4. "Data loaded with AJAX get request." textinin göründügünü ve
+   zemin renginin "#28a745" oldugunu assert edin
+
+
+Ödev-11  shadowroot
+-----------------------------------------------------------
+1. http://uitestingplayground.com/
+2. "Shadow DOM" linkine tikla
+3. "Playground" yazisi altindaki inputbox'a "guidersoft" send edin.
