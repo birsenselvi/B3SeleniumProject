@@ -25,28 +25,94 @@ xpath:
 
 
 
-#   Aciklama                            cssSelector                         xpath
---  -----------------------------       -----------------------             ---------------------------------
-1.  Tüm elementleri                     *                                   //*
-2.  Sayfadaki tüm E elementleri         E                                   //E
-3.  id attr. olan E elementleri         E[id]                               //E[@id]
-4.  A attr. olan E elementleri          E[A]                                //E[@A]
-5.  A='a' attr. olan E elementleri      E[A='a']                            //E[@A='a']
-6.  id='id1' olan E elementleri         E[id='id1']   = E#id1               //E[@id='id1']
-7.  id='id1' olan tüm elementleri       [id='id1']    = #id1                //*[@id='id1']
-8.  class='c1' olan E elementleri       E[class='c1'] = .c1                 //E[@class='c1']
+#   Aciklama                                cssSelector                         xpath
+--  -----------------------------           -----------------------             ---------------------------------
+1.  Tüm elementleri                         *                                   //*
+2.  Sayfadaki tüm E elementleri             E                                   //E
+3.  id attr. olan E elementleri             E[id]                               //E[@id]
+4.  A attr. olan E elementleri              E[A]                                //E[@A]
+5.  A='a' attr. olan E elementleri          E[A='a']                            //E[@A='a']
+6.  id='id1' olan E elementleri             E[id='id1']   = E#id1               //E[@id='id1']
+7.  id='id1' olan tüm elementleri           [id='id1']    = #id1                //*[@id='id1']
+8.  class='c1' olan E elementleri           E[class='c1'] = .c1                 //E[@class='c1']
 9.  class                               .navbar-toggler.navbar-toggler-right    //*[@class='navbar-toggler navbar-toggler-right']
 10. E1 elementinin altindaki olan E2
-    child (ilk baglisi>                 E1 > E2                             //E1/E2
-    altindakiler                        E1 E2                               //E1//E2
-10. text olan E elementi                ----                                //E[text()]
-11. text'i "ali" olan E elementi        ----                                //E[text()='ali']
-12. text'i "ali" iceren E elementi        ----                              //E[contains(text(),'ali')]
-13. class'i "ali" iceren E elementi                                         //E[contains(@class,'ali')]
-14. E elementlerinden 2. sirada olanlar                                     //E[2]
-16. E elementlerinden bastan 2. sirada olan                                 (//E)[2]
-17. E elementinin parent'i olan E2        ---                               E//parent::E2
-18. E elementinin ancestor'i olan E2      ---                               E//ancestor::E2
+    child (ilk baglisi)                     E1 > E2                             //E1/E2
+    altindakiler                            E1 E2                               //E1//E2
+10. text olan E elementi                    ----                                //E[text()]
+11. text'i "ali" olan E elementi            ----                                //E[text()='ali']
+12. text'i "ali" iceren E elementi          ----                                //E[contains(text(),'ali')]
+13. class'i "ali" iceren E elementi                                             //E[contains(@class,'ali')]
+14. E elementlerinden 2. sirada olanlar                                         //E[2]
+16. E elementlerinden bastan 2.sirada olan                                      (//E)[2]
+17. E elementinin parent'i olan E2        ---                                   E//parent::E2
+18. E elementinin ancestor'i olan E2      ---                                   E//ancestor::E2
+
+
+19. A attribute'u 't' ye esit olan E elementi   E[A='t']	                    //E[@A='t']
+20. A attribute'u 't' iceren E elementi		    E[A*='t']                       //E[contains(@A,'t')]
+21. A attribute'u 't' ile baslayan E elementi	E[A^='t']                       //E[starts-with(@A, 't')]
+22. A attribute'u 't' ile biten E elementi	    E[A$='t']                       //E[substring(@A, string-length(@A) - string-length('t')+1)='t']
+
+23. E elementlerinden 1. sirada olan        E:first-of-type                     //E[1]
+24. E elementlerinden n. sirada olan        E:nth-of-type(n)                    //E[n]
+25. E elementlerinden son sirada olan       E:last-of-type                      //E[last()]
+
+26. E elementinin 1. siradaki childi        E>:*first-child                     //E/*[1]
+27. E elementlerinden n. sirada olan        E>:nth-child(n)                     //E[n]
+28. E elementlerinden son siradaki childi   E>:last-child                       //E[last()]
+
+29. E elementinin Sonraki E1 kardesileri 	E2 ~ E1                             //E2/following-sibling::E1
+30. E elementinin Sonraki E1 kardesi        E2 + E1                             //E2/following-sibling::*[1][name()='E1']
+31. E elementinin sonraki kardesleri		E + *                               //E/following-sibling::*
+32. E elementinin önceki E1 kardesileri                                         //E2/preceding-sibling::E1
+33. E elementinin önceki E1 kardesi	                                            //E2/preceding-sibling::*[1][name()='E1']
+34. E elementinin önceki kardesi	                                            //E/preceding-sibling::*[1]
+
+	                                        E:disabled                          //E[@disabled]
+	                                        *:enabled                           //*[not(@disabled)]
+	                                        *:checked                           //*[@checked]
+                                                                                //*[not(contains(translate(@tag, "W1", "W2"), "W="))]
+                                                                                //button[contains(normalize-space(@class), ' btn-primary ')]
+                                            E:not(empty)
+
+XPATH-METHODS
+----------------------------------
+boolean( expression )
+concat( string1, string2 [,stringn]* )
+contains(haystack, needle)
+count( node-set )
+last()
+name()
+normalize-space( [string] )
+not( expression )
+string( [object] )
+starts-with(haystack, needle)
+string-length( [string] )
+substring(string, start)
+substring(string, start, length)
+substring-after( haystack, needle )
+substring-before( haystack, needle )
+
+
+
+
+
+[contains(text(),'metin')]
+[text()='metin']
+
+
+
+----> https://demoqa.com/text-box
+//div[@class='card mt-4 top-card' and .//h5[text()='Elements']]
+//ul/li[1][.//span[text()='Text Box']]
+
+----> https://demoqa.com/webtables
+//div[@role='row' and .//div[text()='Vega']]//div[@class='action-buttons']/span[1]
+//div[@role='row' and .//div[text()='Vega']]//span[@title='Edit']
+
+xpath       : //tagName[@attribute='value']
+cssSelector : tagName[attribute='value']
 
 
 
