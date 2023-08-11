@@ -16,6 +16,8 @@ public class Test1 {
 
     @Test
     public void test1(){
+        // utils package'sinin altindaki Driver class'inda bulunan
+        // static getDriver() methodu ile driver olusturuldu.
         driver = Driver.getDriver("edge");
         driver.get("https://google.com");
 
