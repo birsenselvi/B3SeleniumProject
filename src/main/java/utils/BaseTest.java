@@ -60,6 +60,20 @@ public class BaseTest {
         String pos = up ? "true" : "false";
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].scrollIntoView(" + pos + ");", element);
-        //js.executeScript("arguments[0].scrollIntoView(" + up + ");", element);
+
+        /*
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView(" + up + ");", element);
+        */
+    }
+
+    public void clickByJs(By locator){
+        WebElement element = driver.findElement(locator);
+        clickByJs(element);
+    }
+
+    public void clickByJs(WebElement element){
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].click();", element);
     }
 }

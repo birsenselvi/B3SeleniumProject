@@ -1,8 +1,10 @@
 package gun08;
 
+import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import utils.BaseTest;
 import utils.Driver;
@@ -137,16 +139,83 @@ public class TestJavascriptExecuter extends BaseTest {
     @Test
     public void test_ScrollIntoView3(){
         driver = Driver.getDriver();
-
+        driver.manage().window().maximize();
         driver.get(url);
 
         By lElement = By.xpath("//p[contains(text(), 'Rutrum conubia')]");
         WebElement element = driver.findElement(lElement);
 
-        // elementi sayfanin ortasina gelecek sekilde kaydirma islemi yapin
+        // element sayfanin ortasina gelecek sekilde kaydirma islemi yapin
         scrollIntoView(element, false);
 
+        sleep(1000);
+
+        int y = driver.manage().window().getSize().getHeight()/2;
+        System.out.println(y);
+        scrollBy(y);
+
         sleep(10000);
+        driver.quit();
+
+    }
+
+
+    @Test
+    public void test_ScrollIntoView4(){
+        driver = Driver.getDriver();
+        driver.manage().window().maximize();
+        driver.get(url);
+
+
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("document.body.style.zoom='50%'");
+
+        sleep();
+
+        By lElement = By.xpath("//p[contains(text(), 'Rutrum conubia')]");
+        WebElement element = driver.findElement(lElement);
+
+        // element sayfanin ortasina gelecek sekilde kaydirma islemi yapin
+        scrollIntoView(element, false);
+
+        sleep(1000);
+
+        int y = driver.manage().window().getSize().getHeight()/2;
+        System.out.println(y);
+        scrollBy(y);
+
+        sleep(5000);
+        // JavascriptExecuter ile sayfa boyutu degistirilir ise
+        // sayfa refresh edildiginde ya da baska bir sayfaya gecildiginde
+        // orijinal boyutlarina döner.
+        js.executeScript("document.body.style.zoom='200%'");
+        sleep();
+        js.executeScript("document.body.innerHTML='Selam'");
+        sleep(5000);
+        driver.quit();
+
+    }
+
+
+
+    @Test
+    public void buttonClickWithJS(){
+        String url = "http://uitestingplayground.com/textinput";
+        By input = By.cssSelector("#newButtonName");
+        By button = By.cssSelector("#updatingButton");
+        driver = Driver.getDriver();
+
+        driver.get(url);
+
+        String text = RandomStringUtils.randomAlphabetic(5, 10);
+        sendkeys(input, text);
+        sleep(500);
+        clickByJs(button);
+        sleep(500);
+        Assert.assertEquals(driver.findElement(button).getText(), text);
+        sleep();
+
+
         driver.quit();
 
     }

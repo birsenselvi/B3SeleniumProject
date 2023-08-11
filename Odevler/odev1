@@ -1,0 +1,24 @@
+Scenario-1
+------------------------------------------
+1. https://demoblaze.com/  sayfasina gidin
+2. "Log in" butonuna tiklayin
+3. Dialog icindeki "Log in" butonunun visible oldugunu assert edin.
+5. "x" butonu ile dialog'u kapatin
+6. Dialogun kapandigini "Close" butonunun visibility'sine bakarak assert edin
+
+
+Scenario-2
+------------------------------------------
+1.  https://www.saucedemo.com/  sitesine git
+2.  sayfada belirtilen standart user ile login olun
+3.  Sayfada Listelenen ürünlerin isimlerini List olarak alin ve consola yazdirin.
+4.  "Sauce Labs Bike Light" ve "Sauce Labs Bolt T-Shirt" ürünlerini sepete ekleyin
+5.  Sayfada Listelenen ürünlerin "Add To Cart"'dan  "Remove"'a dönen buton sayisinin 2 oldugunu assert edin.
+5.  sepete gidin
+6.  sepette 2 ürünün oldugunu assert edin.
+7.  Checkout yapin
+8.  Acilan sayfadaki formu doldurun
+9.  Continue butonuna tiklayin
+10. Listelenen ürünlerin altindaki fiyatlarini alin ve toplayin
+    daha sonra en alttaki Total: de yazan fiyat ile ayni oldugunu assert edin.
+11. Finish'e tiklayarak "Thank you for your order!" yazisinin ciktigini assert edin.
