@@ -134,4 +134,20 @@ public class TestJavascriptExecuter extends BaseTest {
 
     }
 
+    @Test
+    public void test_ScrollIntoView3(){
+        driver = Driver.getDriver();
+
+        driver.get(url);
+
+        By lElement = By.xpath("//p[contains(text(), 'Rutrum conubia')]");
+        WebElement element = driver.findElement(lElement);
+
+        // elementi sayfanin ortasina gelecek sekilde kaydirma islemi yapin
+        scrollIntoView(element, false);
+
+        sleep(10000);
+        driver.quit();
+
+    }
 }
