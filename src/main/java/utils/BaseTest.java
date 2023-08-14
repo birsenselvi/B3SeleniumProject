@@ -6,15 +6,30 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-
+/**
+ * Bu class istedigimiz testlerimizde kullanabilecegimiz parent classdir.
+ * Testlerde kullanacagimiz WebDriver ve kullanacagimiz methodlari yazabiliriz.
+ */
 public class BaseTest {
 
+    /**
+     * child classlarda kullanilacak driver
+     */
     protected WebDriver driver;
 
+    /**
+     * ihtiyac durumunda kullanilmak üzere olusturulan Thread.sleep methodu
+     * Otomasyonda zorunlu olmadikca kullnilmamasi önerilir
+     * default 1000ms = 1sn ile overload sleep(long milis) cagrilmistir.
+     */
     public void sleep(){
         sleep(1000);
     }
 
+    /**
+     * aldigi ms süresince Thread'i durdurur.
+     * @param milis milisecond olarak bekleme süresi
+     */
     public void sleep(long milis){
         try {
             Thread.sleep(milis);
