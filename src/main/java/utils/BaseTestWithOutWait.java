@@ -5,22 +5,17 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
 
 /**
  * Bu class istedigimiz testlerimizde kullanabilecegimiz parent classdir.
  * Testlerde kullanacagimiz WebDriver ve kullanacagimiz methodlari yazabiliriz.
  */
-public class BaseTest {
+public class BaseTestWithOutWait {
 
     /**
      * child classlarda kullanilacak driver
      */
     protected WebDriver driver;
-    protected WebDriverWait wait;
 
     /**
      * ihtiyac durumunda kullanilmak üzere olusturulan Thread.sleep methodu
@@ -44,8 +39,7 @@ public class BaseTest {
     }
 
     public void click(By locator){
-        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.elementToBeClickable(locator)).click();
+        driver.findElement(locator).click();
     }
 
     public void sendkeys(By locator, CharSequence...text){

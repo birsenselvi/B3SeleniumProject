@@ -11,76 +11,10 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 import java.util.List;
 
-public class Wait1 {
+public class ExplicitlyWait {
 
     WebDriver driver;
 
-    @Test
-    public void test_getRectColorFail(){
-        /*  https://www.selenium.dev/selenium/web/dynamic.html
-            "Add a box!" butonuna tikla
-            cikan karenin rengini consola yazdirin
-            rgba(255,0,0,0)
-         */
-        String url = "https://www.selenium.dev/selenium/web/dynamic.html";
-        By lAddBoxButton = By.cssSelector("#adder");
-        By lRedBox = By.xpath("//div[@id='box0']");
-        driver = new ChromeDriver();
-
-        driver.get(url);
-
-        WebElement button = driver.findElement(lAddBoxButton);
-        button.click();
-        /*
-            click den sonra redBox bir süre gecikmeli geliyor.
-            burada Thread.sleep(1000); konursa sorun cözülebilir. KESILIKLE TAVSIYE EDILMEZ.
-            Mümkün oldugunca kullanilmamasi lazim.
-         */
-
-
-        WebElement redBox = driver.findElement(lRedBox);
-        System.out.println(redBox.getCssValue("background-color"));
-
-        driver.quit();
-
-
-
-    }
-
-    @Test
-    public void test_getRectColor(){
-        /*  https://www.selenium.dev/selenium/web/dynamic.html
-            "Add a box!" butonuna tikla
-            cikan karenin rengini consola yazdirin
-            rgba(255,0,0,0)
-         */
-        String url = "https://www.selenium.dev/selenium/web/dynamic.html";
-        By lAddBoxButton = By.cssSelector("#adder");
-        By lRedBox = By.xpath("//div[@id='box0']");
-        driver = new ChromeDriver();
-
-        // driver'a Implicitly wait eklendi. süre 10 sn
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        /*
-            Implicitly Wait
-            driver bünyedindedir. Bir sefer tanimlanir.
-            Bu bekleme element presence oluncaya kadar her element icin beklenir.
-            presence : var oluncaya kadar. Kodlarda olan element presence'dir.
-
-         */
-
-        driver.get(url);
-
-        WebElement button = driver.findElement(lAddBoxButton);
-        button.click();
-
-        WebElement redBox = driver.findElement(lRedBox);
-        System.out.println(redBox.getCssValue("background-color"));
-        System.out.println(redBox.isDisplayed());
-
-        driver.quit();
-
-    }
 
     @Test
     public void test_ExplicitlyWait1Fail(){
@@ -112,7 +46,14 @@ public class Wait1 {
         /*
             ExplicitWait : Elemente özel islemleri gerceklestirir.
             visible olmasini, precense olmasini, renginin deismesini,
-            invisible olmasini, element sayisini,
+            invisible olmasini, element sayisini,..., beklemesi icin kullanilir.
+
+            --- tanimlanmasi : bir nesne olarak tanimlanir.
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20), Duration.ofMillis(300));
+
+            tanimlamada, driver (zorunlu), bekleme süresi (zorunlu) ve sleep (optional) süresi tanimlanir.
+            uygulama icinde istenilen kadar wait tanimlanabilir.
 
          */
         String url = "https://www.selenium.dev/selenium/web/dynamic.html";
@@ -164,8 +105,6 @@ public class Wait1 {
 
         driver.quit();
 
-
-
     }
 
 
@@ -187,5 +126,23 @@ public class Wait1 {
 
 
          */
+    }
+
+
+
+    private void baziExplicitWaitExpectedCondirionlari(){
+
+        // tanimlanmis bir locator
+        By locator = By.xpath("//a[@id]");
+
+        // tanimlandis bir element
+        WebElement element = driver.findElement(locator);
+
+        // Explicitlywait tanimlandi
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+        // bazi Expected conditions
+        WebElement element1 = wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+
     }
 }

@@ -4,10 +4,10 @@ import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import utils.BaseTest;
+import utils.BaseTestWithOutWait;
 import utils.Driver;
 
-public class ButtonTest extends BaseTest {
+public class ButtonTest extends BaseTestWithOutWait {
 
     /*
         http://uitestingplayground.com/textinput

@@ -1,12 +1,12 @@
 package gun08;
 
 import org.testng.annotations.Test;
-import utils.BaseTest;
+import utils.BaseTestWithOutWait;
 import utils.Driver;
 
 import java.time.Duration;
 
-public class ImlicitlyWait extends BaseTest {
+public class ImlicitlyWait extends BaseTestWithOutWait {
     /*
 
         1.  Implicitly Wait
