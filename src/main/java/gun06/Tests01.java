@@ -1,6 +1,6 @@
-package gun04;
+package gun06;
 
-import gun03.BaseClass;
+import gun05.BaseClass;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;

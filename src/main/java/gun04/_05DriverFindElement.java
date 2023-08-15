@@ -1,4 +1,4 @@
-package gun02;
+package gun04;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -6,18 +6,25 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.Assert;
-import org.testng.annotations.Test;
 
-public class _07DriverFindElement {
+public class _05DriverFindElement {
 
-    WebDriver driver;
-    String url = "https://www.saucedemo.com/";
+    static WebDriver driver;
+    static String url = "https://www.saucedemo.com/";
 
-    @Test
-    public void test1() {
+    public static void main(String[] args) {
         driver = getDriver();
         driver.get(url);
+
+        /* By locator class'idir. Selenium locatorlari
+            By.id();
+            By.name();
+            By.linkText();
+            By.partialLinkText();
+            By.className();
+            By.cssSelector();
+            By.xpath();
+         */
 
         // username input'unu id ile bulduk ve "standard_user" degerini yazdik.
         By lUsername = By.id("user-name");
@@ -36,17 +43,9 @@ public class _07DriverFindElement {
         System.out.println("loginButton.getCssValue(\"background-color\") = " + loginButton.getCssValue("background-color"));
         loginButton.click();
 
-        Assert.assertEquals(driver.getCurrentUrl(), "https://www.saucedemo.com/inventory.html");
-        Assert.assertTrue(driver.getCurrentUrl().equalsIgnoreCase( "https://www.saucedemo.com/inventory.html"));
-        Assert.assertTrue(driver.getCurrentUrl().contains( "inventory.html"));
-        Assert.assertTrue(driver.findElement(By.id("shopping_cart_container")).isDisplayed());
-
-
-        driver.findElement(By.linkText("Sauce Labs Backpack")).click();
 
         sleep();
         driver.quit();
-
     }
 
 

@@ -1,6 +1,6 @@
-package gun05;
+package gun07;
 
-import gun03.BaseClass;
+import gun05.BaseClass;
 import org.testng.annotations.Test;
 
 public class Scenario1 extends BaseClass {

@@ -1,4 +1,4 @@
-package gun06;
+package gun08;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;

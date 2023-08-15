@@ -1,6 +1,5 @@
-package gun02;
+package gun04;
 
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class _06TestNGTestAnnotation {

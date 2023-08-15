@@ -49,9 +49,10 @@ public class BaseTest {
     }
 
     public void sendkeys(By locator, CharSequence...text){
-        WebElement eUsername = driver.findElement(locator);
-        eUsername.clear();
-        eUsername.sendKeys(text);
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(locator));
+        element.clear();
+        element.sendKeys(text);
     }
 
     public void scrollBy(int y){
@@ -70,6 +71,11 @@ public class BaseTest {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollTo(" + x + ", " + y + ");");
 
+    }
+
+    public void scrollIntoView(By locator){
+        WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+        scrollIntoView(element);
     }
 
     public void scrollIntoView(WebElement element){

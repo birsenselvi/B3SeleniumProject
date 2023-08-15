@@ -1,4 +1,4 @@
-package gun02;
+package gun04;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;

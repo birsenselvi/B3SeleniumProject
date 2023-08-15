@@ -1,4 +1,4 @@
-package gun10;
+package gun12;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -13,7 +13,6 @@ import utils.Utils;
 import java.time.Duration;
 import java.util.List;
 import java.util.Random;
-import java.util.Scanner;
 import java.util.stream.Collectors;
 
 public class Tests {

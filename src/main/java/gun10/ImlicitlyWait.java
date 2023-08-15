@@ -1,4 +1,4 @@
-package gun08;
+package gun10;
 
 import org.testng.annotations.Test;
 import utils.BaseTestWithOutWait;
