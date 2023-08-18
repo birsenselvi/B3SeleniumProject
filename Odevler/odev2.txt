@@ -1,0 +1,17 @@
+1.  https://demoqa.com/sortable   sayfasina gidin
+    actions ile 300 px scroll yapin
+    DregDrop ile "One",....,"Six" siralamasini "Six",..,"One" olacak sekilde degistirin
+
+
+
+2.  http://www.dhtmlgoodies.com/scripts/drag-drop-custom/demo-drag-drop-3.html
+    solda listeklenen baskentleri sagda listelenen ülkelerle eslestirin
+    eslesme dogru olmali.
+    dogru eslestirme yapunca baskent'in zemin rengi degismektedir.
+
+
+Bonus:
+    https://demoqa.com/slider   sayfasina gidin
+    Kaydirma cubugu üzerindeki butonu slider degeri
+    70 den büyük oluncaya kadar action class kullanarak kaydirin
+

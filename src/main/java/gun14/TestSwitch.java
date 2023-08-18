@@ -1,6 +1,7 @@
 package gun14;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -16,6 +17,7 @@ public class TestSwitch extends BaseTest {
 
     {
         driver = Driver.getDriver();
+        driver.manage().window().maximize();
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
@@ -34,7 +36,7 @@ public class TestSwitch extends BaseTest {
 
         //        searchbox'a "guidersoft" yazin ve aratin
         By lSearchBox = By.cssSelector("input[name=\"p\"]");
-        sendkeys(lSearchBox, "Guidersoft");
+        sendkeys(lSearchBox, "Guidersoft" + Keys.ENTER);
 
         String winYahoo = driver.getWindowHandle();
 
@@ -60,7 +62,7 @@ public class TestSwitch extends BaseTest {
 
         //        acilan sayfada kurs basliklarini bir ArrayListe atin
         By lCourseList = By.cssSelector(".course-title > a");
-        List<WebElement> courses = driver.findElements(lCourseList);
+        List<WebElement> courses = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(lCourseList));
 
         courses.forEach(e -> System.out.println(e.getText()));
 
