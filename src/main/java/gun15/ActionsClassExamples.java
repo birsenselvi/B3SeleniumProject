@@ -3,7 +3,7 @@ package gun15;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
+import static org.openqa.selenium.support.ui.ExpectedConditions.*;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -23,13 +23,13 @@ public class ActionsClassExamples extends BaseTest {
     }
 
     @Test
-    public void odev11() {
+    public void slider() {
         String url = "https://demoqa.com/slider";
         driver.get(url);
 
         By lButton = By.xpath("(//div[@id='sliderContainer']//input)[1]");
 
-        WebElement button = wait.until(ExpectedConditions.elementToBeClickable(lButton));
+        WebElement button = wait.until(elementToBeClickable(lButton));
         int len = button.getSize().getWidth() / 2;
 
         for (int i = -len; i < len; i += 5) {
@@ -51,7 +51,7 @@ public class ActionsClassExamples extends BaseTest {
     }
 
     @Test
-    public void odev12() {
+    public void sortableLists() {
         String url = "https://demoqa.com/sortable";
         driver.get(url);
 
@@ -61,6 +61,7 @@ public class ActionsClassExamples extends BaseTest {
 
         trag("List", 6);
         trag("Grid", 9);
+        driver.quit();
     }
 
     public boolean compare(String[] arr, int index){
@@ -102,4 +103,28 @@ public class ActionsClassExamples extends BaseTest {
                 .collect(Collectors.toList())
                 .get(0);
     }
+
+
+    @Test
+    public void capitalOrder() {
+        String url = "http://www.dhtmlgoodies.com/scripts/drag-drop-custom/demo-drag-drop-3.html";
+        driver.get(url);
+
+        for (int i = 1; i < 8; i++) {
+            By city = By.id("box" + i);
+            By country = By.id("box10" + i);
+            WebElement source = driver.findElement(city);
+            WebElement target = driver.findElement(country);
+            wait.until(not(attributeContains(city, "style", "background-color")));
+            new Actions(driver)
+                    .dragAndDrop(source, target)
+                    .pause(300)
+                    .build()
+                    .perform();
+
+            wait.until(attributeContains(city, "style", "background-color"));
+        }
+        driver.quit();
+    }
+
 }
