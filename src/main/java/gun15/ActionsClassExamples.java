@@ -78,6 +78,7 @@ public class ActionsClassExamples extends BaseTest {
         }
         return true;
     }
+
     public void trag(String tabHeader, int max) {
         String[] arr = {"One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"};
 
