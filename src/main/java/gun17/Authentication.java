@@ -74,4 +74,26 @@ public class Authentication extends BaseTest {
         String url1 = driver.getCurrentUrl().replace("https://", "https://" + username +":" + password + "@");
         driver.get(url1);
     }
+
+    @Test
+    public void test_digestAuthentication4() {
+        String url = "https://the-internet.herokuapp.com/";
+        String username = "admin";
+        String password = "admin";
+
+        driver.get(url);
+
+        By basicAuth = By.linkText("Digest Authentication");
+
+        driver.findElement(basicAuth).click();
+        wait.until(ExpectedConditions.urlContains("basic_auth"));
+
+        String url1 = driver.getCurrentUrl().replace("https://", "https://" + username +":" + password + "@");
+        driver.get(url1);
+
+        // back tusuna basin
+        // sayfayi refresh edin
+        // forward tusuna basin
+
+    }
 }
