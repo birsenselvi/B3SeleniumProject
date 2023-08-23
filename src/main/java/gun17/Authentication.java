@@ -96,4 +96,20 @@ public class Authentication extends BaseTest {
         // forward tusuna basin
 
     }
+
+    @Test
+    public void test_federalAuthentication() {
+        // bu sayfada authentication oldugunu düsünün
+
+        String url = "https://the-internet.herokuapp.com/";
+        String username = "admin";
+        String password = "admin";
+
+        driver.get(url);
+        // bu driver.get ile cookie ler olusuturlur. Daha sonra basic_authentication gibi girilir
+
+        String url1 = driver.getCurrentUrl().replace("https://", "https://" + username +":" + password + "@");
+        driver.get(url1);
+
+    }
 }
