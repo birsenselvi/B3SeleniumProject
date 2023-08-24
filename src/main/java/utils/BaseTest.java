@@ -1,15 +1,17 @@
 package utils;
 
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.File;
+import java.io.IOException;
 import java.time.Duration;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 /**
  * Bu class istedigimiz testlerimizde kullanabilecegimiz parent classdir.
@@ -112,5 +114,29 @@ public class BaseTest {
 
     public void hover(WebElement element){
         new Actions(driver).moveToElement(element).perform();
+    }
+
+
+    public void takeScreenShot(String fileName){
+        takeScreenShot(fileName, null);
+    }
+
+    public void takeScreenShot(String fileName, WebElement element){
+        TakesScreenshot screenshot = (TakesScreenshot) driver;
+        File sourceFile, targetFile;
+        if (element != null)
+            sourceFile = element.getScreenshotAs(OutputType.FILE);
+        else
+            sourceFile = screenshot.getScreenshotAs(OutputType.FILE);
+
+        String now = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMddHHmmss"));
+        String name = fileName + "_" + now + ".png";
+        targetFile = new File("screenshots/" + name);
+        try {
+            FileUtils.copyFile(sourceFile, targetFile);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 }
