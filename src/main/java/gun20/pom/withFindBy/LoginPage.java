@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 
@@ -31,6 +32,9 @@ public class LoginPage extends BasePage {
 
         // bu initialize olmaz ise element olusturulmaz ve NullPointerException
         PageFactory.initElements(driver, this);
+
+        // ajax beklemesi yapmak icin yukaridaki PageFactory.initElements asagidaki gibi revize edilir
+        //PageFactory.initElements(new AjaxElementLocatorFactory(driver,10), this);
     }
 
     public void gotoSite(){
