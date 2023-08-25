@@ -1,0 +1,8 @@
+
+
+
+POM: Page Object Model
+   Sayfalar class'ar olarak tutulur
+   Locatorlar, ilgili methodlar bu sayfalar icinde olur
+
+(Maven) POM : Project Object Model
