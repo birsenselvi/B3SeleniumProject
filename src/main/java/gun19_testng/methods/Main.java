@@ -1,4 +1,4 @@
-package gun19.methods;
+package gun19_testng.methods;
 
 public class Main {
 

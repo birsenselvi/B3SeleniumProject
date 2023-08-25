@@ -1,4 +1,4 @@
-package gun20.pom.withBy;
+package gun20_pom.pom.withBy;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

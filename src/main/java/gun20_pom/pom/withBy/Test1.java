@@ -1,19 +1,18 @@
-package gun20.pom.withFindBy;
+package gun20_pom.pom.withBy;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import java.util.List;
 
-public class TestWithFindBy {
+public class Test1 {
 
     WebDriver driver;
     LoginPage lp;
-
+    ProductPage pp;
 
     @BeforeTest
     public void setup(){
@@ -23,16 +22,19 @@ public class TestWithFindBy {
 
     @Test
     public void test1(){
-
-        //LoginPage lp1 = PageFactory.initElements(driver, LoginPage.class);
-
         lp = new LoginPage(driver);
         lp.gotoSite();
         lp.assertTitle("Swag Labs");
         lp.login("standard_user", "secret_sauce");
-        lp.assertLogin();
+        pp = lp.assertLogin();
     }
 
+    @Test(dependsOnMethods = {"test1"})
+    public void testProduct(){
+        //pp = new ProductPage(driver);
+        List<String> names = pp.getListOfProductNames();
+        System.out.println(names);
+    }
 
     @AfterTest
     public void tearDown(){

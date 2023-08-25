@@ -1,4 +1,4 @@
-package gun19;
+package gun19_testng;
 
 public class ThreadSample {
 
