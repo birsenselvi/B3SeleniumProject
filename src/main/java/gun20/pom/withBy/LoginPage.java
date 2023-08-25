@@ -32,8 +32,9 @@ public class LoginPage extends BasePage{
         click(lLoginButton);
     }
 
-    public void assertLogin(){
+    public ProductPage assertLogin(){
         wait.until(ExpectedConditions.visibilityOfElementLocated(lAppLogo));
+        return new ProductPage(driver);
     }
 
 }

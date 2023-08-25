@@ -6,3 +6,11 @@ POM: Page Object Model
    Locatorlar, ilgili methodlar bu sayfalar icinde olur
 
 (Maven) POM : Project Object Model
+
+FindBy :
+@FindBy -> selenium'un dinamik element kullanimi
+@FindBys
+@FindAll
+
+bu annotationlar kullanilirsa driver.findElement ya da precence wait ihtiyaci olmaz
+element ne zaman cagrilirsa, tanimlanan locator o zaman element olarak tekrar olusturulur
