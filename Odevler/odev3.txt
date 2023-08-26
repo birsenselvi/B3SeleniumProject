@@ -1,0 +1,48 @@
+
+Odev:
+    1.  https://demoqa.com/automation-practice-form
+    2.  Sayfadaki form elementlrtini doldurunuz
+    3.  Takvim kismini ayri bir class/Method ile yapabilirsiniz (optional)
+    4.  Upload islemini ilgili field'a dosya yolu ve adi sendkey yaparak yapilabilir.
+    5.  islemde elementlere scrollIntoView yapilabilir.
+        Reklamlar problem olusturuyor ise, scrollIntoView sonrasi scrollBy ile
+        bir miktar daha kaydirma yapilabilir
+    6.  Click islemleri, selenium, Actions ya da JS ile yapilabilir
+    7.  submit sonrasi bilgileri ihtiva eden dialo'un acildigini assert edin
+
+Bounus:
+    1.  odev3Bounus.zip ile verilen dosya "odev3Bounus" adli java package'ini icerir
+        bu package icinde pom classlari ve test class i var.
+        Bu zip dosyasini local projenizde unzip edin ve methodlari tamamlayin
+    2.  POM class'larinin icerigi bostur.
+    3.  @FindBy'lar ile locator'lar tanimlanmistir.
+        Ihtiyac duyarsaniz basla locatorlar da ekleyebilirsiniz
+    4.  Test1 class icerigini degistirmeyiniz.
+        Test'i calistirdiginizda
+        a.  Login olmali
+        b.  Product'larin isimleri consola yazdirmali
+        c.  Productlarin fiyatlarini consola yazdirmali
+        d.  Isminde "Test.allTheThings" gecen ürünü cart'a eklemeli
+        e.  cart'a tiklamali
+        f.  cart'a gidildigini assert etmeli
+        g.  cart'ta "Test.allTheThings" isimli ürünün oldugunu assert etmeli
+
+
+    @FindBy ile ilgili Aciklama:
+        * tanimlama asagidaki gibi olur ise, yazilan selector 1 den fazla
+        * element bulsa dahi ilk elementi alir.
+        * "driver.findElement" islemi yürütür
+
+        @FindBy(css = ".inventory_item")
+        private WebElement eProduct;
+
+
+        * tanimlama asagidaki gibi olur ise, yazilan selector bulunan tüm
+        * elementleri List olarak return eder.
+        * "driver.findElements" islemi yürütür
+        * List return etmesini istiyorsak
+        * variable'i "List<WebElement>"" olarak tanimlamamiz gerekir
+
+        @FindBy(css = ".inventory_item")
+        private List<WebElement> eProducts;
+
