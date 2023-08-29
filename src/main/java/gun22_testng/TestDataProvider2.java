@@ -1,7 +1,9 @@
 package gun22_testng;
 
+import gun21_testng.demoblaze.Product;
 import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -20,6 +22,7 @@ public class TestDataProvider2 extends BaseTest {
     By lLoginButton = By.cssSelector("form button");
     By lInvalidCredentialLabel = By.xpath("//p[text()='Invalid credentials']");
     By lUserDropDown = By.cssSelector(".oxd-userdropdown");
+    By lLogout = By.xpath("//a[text()='Logout']");
 
 
     @BeforeTest
@@ -41,9 +44,17 @@ public class TestDataProvider2 extends BaseTest {
         driver.get(url);
     }
 
-    @Test(dataProvider = "logindata")
+    @Test(dataProvider = "logindata", dependsOnMethods = {"start"})
     public void login(String username, String password, boolean login){
-        //sendkeys();
+        sendkeys(lUsername, username);
+        sendkeys(lPassword, password);
+        click(lLoginButton);
+        if (login){
+            click(lUserDropDown);
+            click(lLogout);
+        }else {
+            wait.until(ExpectedConditions.visibilityOfElementLocated(lInvalidCredentialLabel));
+        }
     }
 
     @DataProvider(name = "logindata")
