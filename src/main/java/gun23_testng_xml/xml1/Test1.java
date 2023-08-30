@@ -1,4 +1,4 @@
-package gun23_testng_xml;
+package gun23_testng_xml.xml1;
 
 import org.testng.annotations.*;
 

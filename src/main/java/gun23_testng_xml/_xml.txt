@@ -2,3 +2,6 @@ xlm belli sablonda yazilan markup language.
 
 TestNG de suite'ler xml ile olusturulur
 
+XML ile parallel test icin ya
+    - instance Driver ya da
+    - ThreadLocal ile static driver kullanilmalidir.
