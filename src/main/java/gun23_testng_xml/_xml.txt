@@ -1,0 +1,4 @@
+xlm belli sablonda yazilan markup language.
+
+TestNG de suite'ler xml ile olusturulur
+

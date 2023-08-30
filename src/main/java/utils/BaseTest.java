@@ -48,7 +48,13 @@ public class BaseTest {
 
     public void click(By locator){
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.elementToBeClickable(locator)).click();
+        WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+        click(element);
+    }
+
+    public void click(WebElement element){
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.elementToBeClickable(element)).click();
     }
 
     public void sendkeys(By locator, CharSequence...text){
@@ -105,6 +111,11 @@ public class BaseTest {
     public void clickByJs(WebElement element){
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].click();", element);
+    }
+
+    public void executeScript(String script){
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript(script);
     }
 
     public void hover(By locator){

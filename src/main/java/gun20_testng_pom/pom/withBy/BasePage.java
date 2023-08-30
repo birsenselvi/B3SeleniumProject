@@ -1,14 +1,13 @@
-package gun20_pom.pom.withFindBy;
+package gun20_testng_pom.pom.withBy;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
 public abstract class BasePage {
-
     protected WebDriver driver;
     protected WebDriverWait wait;
 
@@ -17,11 +16,11 @@ public abstract class BasePage {
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
-    public void click(WebElement element){
-        wait.until(ExpectedConditions.elementToBeClickable(element)).click();
+    public void click(By locator){
+        wait.until(ExpectedConditions.elementToBeClickable(locator)).click();
     }
 
-    public void sendkeys(WebElement element, String text){
-        wait.until(ExpectedConditions.elementToBeClickable(element)).sendKeys(text);
+    public void sendkeys(By locator, String text){
+        wait.until(ExpectedConditions.elementToBeClickable(locator)).sendKeys(text);
     }
 }

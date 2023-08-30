@@ -1,10 +1,10 @@
-package gun20_pom.testng;
+package gun20_testng_pom.testng;
 
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.annotations.Test;
-import static gun20_pom.testng.Locators.*;
+import static gun20_testng_pom.testng.Locators.*;
 
 public class Test1 extends Test1Base{
 

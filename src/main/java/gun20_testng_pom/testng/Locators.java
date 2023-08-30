@@ -1,4 +1,4 @@
-package gun20_pom.testng;
+package gun20_testng_pom.testng;
 
 import org.openqa.selenium.By;
 
