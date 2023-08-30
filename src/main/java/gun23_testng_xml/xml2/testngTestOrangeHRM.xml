@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite" parallel="tests">
+
+    <test verbose="2" preserve-order="true" name="OrangeHRM">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="gun23_testng_xml.xml2.Test1"/>
+        </classes>
+    </test>
+
+    <test verbose="2" preserve-order="true" name="OrangeHRM2">
+        <parameter name="browser" value="edge"/>
+        <classes>
+            <class name="gun23_testng_xml.xml2.Test1"/>
+        </classes>
+    </test>
+
+</suite>

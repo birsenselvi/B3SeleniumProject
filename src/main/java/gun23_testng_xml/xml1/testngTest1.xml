@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<!--    suite
+        verbose : aciklama detay seviyesi 0-10 arasinda
+        parallel : nelerin parallel yürütülecegi
+        thread-count : parallel calisacak thread sayisi
+-->
+<suite name="MySuite" verbose="2" parallel="tests" thread-count="1">
+    <!-- testler var. Herbir testin name'i unique olmali -->
+    <test name="test1">
+        <classes>
+            <class name="gun23_testng_xml.xml1.Test1"/>
+        </classes>
+    </test>
+
+    <!-- testler var -->
+    <test name="test2">
+        <classes>
+            <class name="gun23_testng_xml.xml1.Test2"/>
+        </classes>
+    </test>
+
+    <!-- testler var -->
+    <test name="test3">
+        <classes>
+            <class name="gun23_testng_xml.xml1.Test2"/>
+        </classes>
+    </test>
+</suite>

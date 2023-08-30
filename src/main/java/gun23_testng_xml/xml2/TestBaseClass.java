@@ -18,14 +18,15 @@ public class TestBaseClass {
 
 
     @BeforeTest
-    @Parameters("browser")
+    @Parameters({"browser"})
     public void beforeTest(@Optional("chrome") String browser){
-        if (browser.trim().equalsIgnoreCase("firefox"))
+        if (browser.trim().equalsIgnoreCase("firefox")) {
             driver = new FirefoxDriver();
-        else if (browser.trim().equalsIgnoreCase("edge")) {
+        } else if (browser.trim().equalsIgnoreCase("edge")) {
             driver = new EdgeDriver();
-        } else
+        } else {
             driver = new ChromeDriver();
+        }
 
         driver.manage().window().maximize();
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
