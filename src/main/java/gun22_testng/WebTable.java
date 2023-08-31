@@ -22,8 +22,6 @@ public class WebTable extends BaseTest {
 
     String url = "https://demoqa.com/webtables";
     By lDelButtons = By.cssSelector("span[id^='delete-record']");
-
-
     By lAddNewRecordButton = By.id("addNewRecordButton");
 
     By lFirstName = By.cssSelector("#firstName-wrapper input");
@@ -86,7 +84,7 @@ public class WebTable extends BaseTest {
     }
 
     @Test(dataProvider = "data", priority = 2)
-    public void fillTheList2(Object...items) {
+    public void fillTheList2(Object[] items) {
         By[] locators = {lFirstName,lLastName, lEMail, lAge, lSalary, lDepartment};
 
         click(lAddNewRecordButton);

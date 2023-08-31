@@ -8,7 +8,7 @@
         <parameter name="testName" value="MyTest1"/>
         <parameter name="n" value="4"/>
         <classes>
-            <class name="gun23_testng_xml.xml3.TestCount">
+            <class name="gun23_testng_xml.xml3_parallel.TestCount">
                 <methods>
                     <include name="test1"/>
                 </methods>
@@ -19,7 +19,7 @@
     <test verbose="2" preserve-order="true" name="TestCount2">
         <parameter name="testName" value="MyTest2"/>
         <classes>
-            <class name="gun23_testng_xml.xml3.TestCount">
+            <class name="gun23_testng_xml.xml3_parallel.TestCount">
                 <methods>
                     <include name="test2"/>
                 </methods>
@@ -30,7 +30,7 @@
     <test verbose="2" preserve-order="true" name="TestCount3">
         <parameter name="n" value="5"/>
         <classes>
-            <class name="gun23_testng_xml.xml3.TestCount"/>
+            <class name="gun23_testng_xml.xml3_parallel.TestCount"/>
         </classes>
     </test>
 

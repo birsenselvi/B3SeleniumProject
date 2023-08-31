@@ -1,4 +1,4 @@
-package gun23_testng_xml.xml3;
+package gun23_testng_xml.xml3_parallel;
 
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Optional;

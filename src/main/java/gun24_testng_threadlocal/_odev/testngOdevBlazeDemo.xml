@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite" parallel="tests" thread-count="3">
+    <parameter name="contactEmail" value="deneme@deneme.com"/>
+    <parameter name="contactName" value="Deneme Deneme"/>
+
+    <test verbose="2" preserve-order="true" name="OdevBlazeDemoTest1">
+        <parameter name="browser" value="chrome"/>
+        <parameter name="messageText" value="Chrome ile Message"/>
+        <classes>
+            <class name="gun24_testng_threadlocal._odev.OdevBlazeDemo"/>
+        </classes>
+    </test>
+
+    <test verbose="2" preserve-order="true" name="OdevBlazeDemoTest2">
+        <parameter name="browser" value="edge"/>
+        <parameter name="messageText" value="Edge ile Message"/>
+        <classes>
+            <class name="gun24_testng_threadlocal._odev.OdevBlazeDemo"/>
+        </classes>
+    </test>
+
+    <test verbose="2" preserve-order="true" name="OdevBlazeDemoTest3">
+        <parameter name="browser" value="firefox"/>
+        <parameter name="messageText" value="Firefox ile Message"/>
+        <classes>
+            <class name="gun24_testng_threadlocal._odev.OdevBlazeDemo"/>
+        </classes>
+    </test>
+
+
+</suite>
