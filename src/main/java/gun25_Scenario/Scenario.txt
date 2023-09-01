@@ -1,0 +1,42 @@
+1.	Gradle kullanilacak
+	package yapisi asagidaki gibi olmalidir.
+
+	driver						(package)
+		Driver.class			(class)
+	locators					(package)
+		Locators.class			(class, @FindBy'lari kullanin)
+	base						(package)
+		BaseTest.class			(class)
+	tests						(package)
+		Tests.class				(class)
+			Testgoto			(Test methodu)
+			TestRegister		(Test methodu)
+			TestLogin			(Test methodu)
+
+
+
+2.	driver package'inda Driver classi olusturun ve
+	bu class size ThreadLocal ile istediginiz Driver'i return etsin
+3.	base package'inda BaseTest class olusturun ve burada
+	- WebDriver
+	- WebDriverWait
+	- @BeforeTest
+	- @AfterTest
+	- genel kullanacaginiz methodlar olsun
+	- @BeforeTest'in xml den alacagi parametre ile driver'i initialize edsin
+
+4.	tests package'inda Tests.class olusturun. Bu classda
+	Testgoto:
+	1.	https://demoblaze.com/  sayfasina gigin
+	2.	Sayfanin acildigindan emin olun
+
+	TestRegister:
+	1.	Yeni kullanici register'i yapin
+	2.	Register yapildigindan emin olun
+
+	TestLogin:
+	1.	Register yaptiginiz kullanici ile Sign in yapin
+	2.	Login oldugunuzdan emin olun.
+
+5.	Testlerde hata ile karsilasirsaniz screenshot alin
+
