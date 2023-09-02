@@ -1,0 +1,18 @@
+1. https://www.saucedemo.com/  sitesine git
+
+2. login ol
+   find : username -> clear et, send : "standard_user"
+   find : password -> clear et, send : "secret_sauce"
+
+3. "Sauce Labs Bike Light" ürününü sepete ekle
+   ürün div i icindeki ilgili add to Cart butonuna tikla (id ve ya name)
+
+4. ürünün eklendigini assert et
+   tiklanan Add to CArt butonunun text i remove oldu mu?
+
+5. sepete git
+
+6. sepette "Sauce Labs Bike Light" ürününün oldugunu assert et
+   remove butonu name ve ya id si ile displayed ise
+
+7. driver i kapat

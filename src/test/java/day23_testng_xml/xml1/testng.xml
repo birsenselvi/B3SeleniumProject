@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite" parallel="tests" thread-count="3">
+    <test name="test1">
+        <parameter name="testName" value="say"/>
+        <parameter name="count" value="5"/>
+        <classes>
+                <class name = "e2etestautomation.src.test.java.day23_testng_xml.xml1.Test1">
+                    <methods>
+                        <include name="count"/>
+                    </methods>
+                </class>
+        </classes>
+    </test>
+    <test name="test2">
+        <parameter name="testName" value="say2"/>
+        <parameter name="sum" value="6"/>
+        <classes>
+            <class name = "e2etestautomation.src.test.java.day23_testng_xml.xml1.Test1">
+                <methods>
+                    <include name="sum"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="test3">
+        <parameter name="testName" value="say3"/>
+        <parameter name="count" value="10"/>
+        <parameter name="sum" value="10"/>
+        <classes>
+            <class name = "e2etestautomation.src.test.java.day23_testng_xml.xml1.Test1"/>
+        </classes>
+    </test>
+
+</suite>
