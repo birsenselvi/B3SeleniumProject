@@ -1,20 +1,20 @@
 package gun28_files_scenario.readfiles;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 import org.testng.annotations.Test;
 
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class ReadJson {
+public class ReadYaml {
 
     @Test
     public void readJson1() throws IOException {
-        String jsonPath = "src/main/java/gun28_files_scenario/readfiles/myJson.json";
-        FileReader file = new FileReader(jsonPath);
-        ObjectMapper mapper = new ObjectMapper();
+        String yamlPath = "src/main/java/gun28_files_scenario/readfiles/myYaml.yml";
+        FileReader file = new FileReader(yamlPath);
+        ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
 
         MyPojo myPojo = mapper.readValue(file, MyPojo.class);
 
@@ -26,9 +26,9 @@ public class ReadJson {
 
     @Test
     public void writeJson1() throws IOException {
-        String jsonPath = "src/main/java/gun28_files_scenario/readfiles/myJson.json";
-        FileReader file = new FileReader(jsonPath);
-        ObjectMapper mapper = new ObjectMapper();
+        String yamlPath = "src/main/java/gun28_files_scenario/readfiles/myYaml.yml";
+        FileReader file = new FileReader(yamlPath);
+        ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
 
         MyPojo myPojo = mapper.readValue(file, MyPojo.class);
 
@@ -36,9 +36,9 @@ public class ReadJson {
         System.out.println("myPojo.getUsername() = " + myPojo.getUsername());
         System.out.println("myPojo.getPassword() = " + myPojo.getPassword());
 
-        myPojo.setPassword("admin123456");
+        myPojo.setPassword("admin123");
 
-        FileWriter writer = new FileWriter(jsonPath);
+        FileWriter writer = new FileWriter(yamlPath);
         mapper.writeValue(writer, myPojo);
 
     }
