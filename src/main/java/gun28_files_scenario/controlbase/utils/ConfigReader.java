@@ -6,12 +6,13 @@ import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class TestConfig {
+public class ConfigReader {
     private String configFile = "src/main/java/gun28_files_scenario/controlbase/config.yml";
     private ObjectMapper mapper;
     private FileReader file;
-    private Config instance;
-    private TestConfig(){
+    static private Config instance;
+
+    private ConfigReader(){
 
     }
 
@@ -26,13 +27,10 @@ public class TestConfig {
         return instance;
     }
 
-    private Config getInstance(){
-        return instance==null ? new TestConfig().get() : instance;
+    public static Config getInstance(){
+        return instance==null ? new ConfigReader().get() : instance;
     }
 
-    public static Config getConfig(){
-        return new TestConfig().getInstance();
-    }
 
 
 }
