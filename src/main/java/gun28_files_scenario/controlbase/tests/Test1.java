@@ -1,24 +1,22 @@
 package gun28_files_scenario.controlbase.tests;
 
 import gun28_files_scenario.controlbase.actions.*;
-import gun28_files_scenario.controlbase.controls.TableControl;
 import gun28_files_scenario.controlbase.utils.Config;
 import gun28_files_scenario.controlbase.utils.ConfigReader;
-import org.slf4j.helpers.Util;
 import org.testng.annotations.Test;
 import utils.Utils;
 
-public class Test1 {
+public class Test1 extends TestBase{
 
     Config config;
 
-    @Test
+    @Test(groups = {"A"})
     public void gotoUrl() {
         config = ConfigReader.getInstance();
         ApplicationActions.launchUrl();
     }
 
-    @Test(dependsOnMethods = "gotoUrl")
+    @Test(dependsOnMethods = "gotoUrl", groups = {"A"})
     public void login() {
         TextBoxActions.sendKeys("Username", config.getUsername());
         TextBoxActions.sendKeys("Password", config.getPassword());
@@ -39,17 +37,19 @@ public class Test1 {
         ButtonActions.click("Reset");
     }
 
-    @Test(dependsOnMethods = {"gotoUrl", "login"}, priority = 3)
+    @Test(dependsOnMethods = {"gotoUrl", "login"}, priority = 3, groups = {"A"})
     public void searchUser() {
         MenuActions.click("Admin");
-        TextBoxActions.sendKeys("Username", "Alice.Duval");
-        DropDownActions.select("User Role", "ESS");
-        TextBoxActions.select("Employee Name", "Alice");
+        TextBoxActions.sendKeys("Username", "Cheeku");
+        DropDownActions.select("User Role", "Admin");
+        TextBoxActions.select("Employee Name", "Virat");
         DropDownActions.select("Status", "Enabled");
         ButtonActions.click("Search");
+        TableActions.isExistInTable("Cheeku");
+
     }
 
-    @Test(dependsOnMethods = {"gotoUrl", "login"}, priority = 4)
+    @Test(dependsOnMethods = {"gotoUrl", "login"}, priority = 4, groups = {"A", "B"})
     public void topMenuAction() {
         MenuActions.click("Admin");
         MenuActions.select("Job", "Job Titles");

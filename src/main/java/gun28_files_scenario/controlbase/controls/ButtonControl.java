@@ -26,6 +26,10 @@ public class ButtonControl extends BaseControl{
         return control;
     }
 
+    public String getText(){
+        return element.getText();
+    }
+
 
 
 
