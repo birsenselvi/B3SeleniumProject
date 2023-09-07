@@ -29,9 +29,8 @@ public class MyElements {
         return this;
     }
 
-    public MyElements click(){
+    public void click(){
         wait.until(ExpectedConditions.elementToBeClickable(locator)).click();
-        return this;
     }
 
 }
