@@ -7,12 +7,19 @@ public class TextBoxControl extends BaseControl{
 
     static String XPATH_TEXTBOX1 = "//div[contains(@class, 'oxd-input-group ') and .//*[contains(text(),'%s')]]//input";
 
+    static String OPTION = "//div[@role='listbox']//div[@role='option' and .//span[contains(text(),'%s')]]";
+
     private TextBoxControl(By locator){
-        super(locator);;
+        super(locator);
     }
 
     public static TextBoxControl fromLabel(String label){
-        String xpath = String.format(XPATH_TEXTBOX1, label);
+        return fromLabel(label, 1);
+    }
+
+    public static TextBoxControl fromLabel(String label, int index){
+        String xpath1 = String.format(XPATH_TEXTBOX1, label);
+        String xpath = "(" + xpath1 + ")[" + index + "]";
         By locator = By.xpath(xpath);
         TextBoxControl control = new TextBoxControl(locator);
         control.label = label;
@@ -25,12 +32,11 @@ public class TextBoxControl extends BaseControl{
         return control;
     }
 
-    public TextBoxControl sendkeys(CharSequence...text){
-        wait.until(ExpectedConditions.visibilityOfElementLocated(locator)).sendKeys(text);
-        return this;
-    }
-
-    public void click(){
+    public void select(String optionText){
+        sendKeys(optionText);
+        String xpath = String.format(OPTION, optionText);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath))).click();
 
     }
+
 }
