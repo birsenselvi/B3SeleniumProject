@@ -9,14 +9,12 @@ public class MenuActions {
         MenuControl
                 .fromLabel(label)
                 .click();
-        ;
     }
 
     public static void select(String label, String option){
         MenuControl
                 .fromLabel(label)
-                .select(option)
-        ;
+                .select(option);
     }
 
     public static void hover(String label){

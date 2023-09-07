@@ -1,6 +1,7 @@
 package gun28_files_scenario.controlbase.tests;
 
 import gun28_files_scenario.controlbase.actions.*;
+import gun28_files_scenario.controlbase.controls.TableControl;
 import gun28_files_scenario.controlbase.utils.Config;
 import gun28_files_scenario.controlbase.utils.ConfigReader;
 import org.slf4j.helpers.Util;
