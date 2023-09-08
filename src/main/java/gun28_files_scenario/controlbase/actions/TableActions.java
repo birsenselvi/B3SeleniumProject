@@ -22,4 +22,9 @@ public class TableActions {
                 .findRowWithText(label)
                 .edit();
     }
+
+    public static void isExistInTable(String label){
+        TableControl
+                .findRowWithText(label);
+    }
 }

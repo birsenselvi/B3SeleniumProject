@@ -7,4 +7,8 @@ public class ButtonActions {
     public static void click(String label){
         ButtonControl.fromLabel(label).click();
     }
+
+    public static String getText(String label){
+        return ButtonControl.fromLabel(label).getText();
+    }
 }
