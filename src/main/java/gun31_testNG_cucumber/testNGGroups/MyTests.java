@@ -1,4 +1,4 @@
-package gun31.testNGGroups;
+package gun31_testNG_cucumber.testNGGroups;
 
 import org.testng.annotations.Test;
 
