@@ -1,0 +1,17 @@
+<!--
+        https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+        Login olun
+        login olundugunu assert edin
+        Menüden "Admin" linkine tiklayin
+        "Add" e tiklayin
+        "Add User" formunu doldurun
+        User Role : ESS
+        Status : enabled
+        Employee Name: Lisa ile baslayan isim secilecek
+        Username: istinct oldugu assert edilecek
+        Password:
+        Confirm Password:
+        Kaydin yapildigi notofocation mesaji ile assert edilecek
+        Kaydedilen useri "Search" ile bulun
+        Eklenen user'i silin
+        Silindiginden emin olun.-->

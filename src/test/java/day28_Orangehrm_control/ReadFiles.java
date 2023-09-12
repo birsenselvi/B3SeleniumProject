@@ -1,4 +1,4 @@
-package day28;
+package day28_Orangehrm_control;
 
 import org.testng.annotations.Test;
 
