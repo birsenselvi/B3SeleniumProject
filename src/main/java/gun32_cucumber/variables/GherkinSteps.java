@@ -1,4 +1,4 @@
-package gun32_cucumber.gherkin;
+package gun32_cucumber.variables;
 
 import io.cucumber.java.en.Given;
 
