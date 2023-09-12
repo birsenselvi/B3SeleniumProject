@@ -1,0 +1,29 @@
+
+1.  TDD : Test Driven Development
+    Testler yazili
+    Uygulama gelistirildikce testler run edilir
+    Testlerde sürekli güncellemeler yapilir
+    Testler basari ile tamamlanirsa testler bitmis olur
+
+2.  BDD: Behavioral Driven Development
+    Son kullanici amaclidir
+    Davranis odaklidir
+
+    Cucumber:
+    Gherkin dili kullanilir
+        her bir satirina Step denir
+        Bircok dil destegi vardir
+        Feature:
+        Scenario:
+        Backgroud:
+        Scenario Outline:
+        Example:
+        Given   : Ön kosulu ifade eder
+        When    : yapilan islem
+        Then    : beklenen sonuc
+        And     : tekrar eden anahtar kelimeler yerine kullanilabilir
+        But     : negatif beklenti
+        *       : tekrar eden anahtar kelimeler yerine kullanilabilir
+    Step Definitionlar vardir
+
+
