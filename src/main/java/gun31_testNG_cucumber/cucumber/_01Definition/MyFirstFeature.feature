@@ -12,6 +12,8 @@ Feature: Bu feature ile ilgili
     And   netice "olumlu" olmali
     And   sonuc ALI olmali
 
+#asdasd
+
   Scenario: Scenario 2
     Given basangic sayisi 0
     When  bu sayiya 1 ekledigimde

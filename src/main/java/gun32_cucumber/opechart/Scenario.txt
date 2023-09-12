@@ -1,0 +1,6 @@
+
+Kullanici "http://opencart.abstracta.us/" adresinde
+"mac" arattiginda
+listelenen ürün sayisi 4 olmali
+
+
