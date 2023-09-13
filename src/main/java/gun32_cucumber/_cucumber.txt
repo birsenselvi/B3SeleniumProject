@@ -1,0 +1,65 @@
+
+
+TDD : Test Driven Development
+
+BDD : Behavioral Driven Development
+    Cucumber
+        cucumber-java
+        cucumber-testng, cucumber-junit
+
+    Gherkin
+        Feature'lar yazilir
+        Scenaro:
+            Given   : Ön sartlar yazilir (precontitions)
+            When    : Action, text requirement
+            Then    : expected condition, assertion
+            And
+            *
+
+        Background:
+
+        Scenario Outline:
+
+        DataTable
+
+
+    Feature:
+
+        Scenario: login functionility
+
+            Given user on homepage
+
+            When  user fill the login form
+            And   user clicks the login button
+
+            Then  login should be successful
+
+
+        Scenario: menu functionility
+
+            Given user logged in
+
+            When  user clicks the Admin link
+
+            Then  admin page should be visible
+
+
+        Scenario: menu functionility
+
+            Given user on homepage
+            And   user fills the login form
+            And   user clicks the login button
+
+            When  user clicks the Admin link
+
+            Then  admin page should be visible
+
+
+
+
+
+
+
+
+
+

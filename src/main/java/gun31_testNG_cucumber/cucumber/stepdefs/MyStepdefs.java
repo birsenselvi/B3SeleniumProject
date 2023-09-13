@@ -44,7 +44,7 @@ public class MyStepdefs {
     }
 
     @Given("^sonuc (ALI|VELI) olmali$")
-    public void sonucOlmali(String text) {
+    public void sonucOlmali1(String text) {
         System.out.println(text);
     }
 }

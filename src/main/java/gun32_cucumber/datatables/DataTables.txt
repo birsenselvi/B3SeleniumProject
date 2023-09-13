@@ -1,0 +1,33 @@
+
+DataTable
+    Steplerde kullanilacak datalardir.
+    Steplerin hemen altina yazilir
+    | |  sembolleri arasina yazilir
+
+    # List, dikey tek degerlerden olusur
+    Given datatable as
+    | 1 |
+    | 2 |
+    | 3 |
+
+
+    # List of Lists
+    Given datatable as
+    | 1 | 1 | 1 | 1 |   -> 1. list
+    | 2 | 2 | 2 | 2 |   -> 2. list
+    | 3 | 3 | 3 | 3 |   -> 3. list
+
+
+    # Map    (key, value)
+    Given datatable as
+    | username | user1  |
+    | password | abc123 |
+    | age      | 21     |
+
+
+
+    # List of Maps
+    Given datatable as
+    | username  | password  | age |     -> bu satir keylerdir
+    | user1     | pass1     | 12  |     -> 1. map'in valueleri
+    | user2     | pass2     | 34  |     -> 2. map'in valueleri

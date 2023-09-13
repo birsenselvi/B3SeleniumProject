@@ -1,4 +1,4 @@
-package gun26_testng;
+package gun26_testng_extentreport;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
