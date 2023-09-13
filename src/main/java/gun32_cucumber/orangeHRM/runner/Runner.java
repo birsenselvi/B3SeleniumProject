@@ -10,3 +10,4 @@ import io.cucumber.testng.CucumberOptions;
 )
 public class Runner extends AbstractTestNGCucumberTests {
 }
+// '[A-Z][A-Za-z\d]*Test(s|Case)?|Test[A-Z][A-Za-z\d]*|IT(.*)|(.*)IT(Case)?'

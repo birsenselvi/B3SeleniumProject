@@ -1,4 +1,4 @@
-package gun26_testng;
+package gun26_testng_extentreport;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;

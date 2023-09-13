@@ -83,4 +83,13 @@ public class DataTablesSteps {
                 }
         );
     }
+
+    @Given("write the following maps with for")
+    public void writeTheFollowingMapsWithFor(DataTable table) {
+        List<Map<String, String>> list = table.asMaps();
+
+        for (Map<String, String> map : list) {
+            System.out.println(map.get("name"));
+        }
+    }
 }
