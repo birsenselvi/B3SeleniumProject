@@ -1,5 +1,7 @@
 package gun33_cucumber;
 
+import gun31_testNG_cucumber.cucumber._01Definition.Runner1;
+import gun32_cucumber.variables.Runner;
 import org.testng.annotations.Test;
 
 import java.util.*;
@@ -25,8 +27,15 @@ public class ListVsMap {
 
     @Test
     public void testObject(){
-        Object[] arr = {1, "2", new ListVsMap()};
+        int[] arrInt = {1, 2, 3};
+        double[] arrDouble = {1.2, 1.3};
+        Class[] arrClass = {ListVsMap.class, Runner.class, Runner1.class};
+        String[] arrString = {"a", "b"};
+
+        Object[] arr = {1, "2", new ListVsMap(), Runner.class};
+
         System.out.println(((ListVsMap)arr[2]).num);
+
     }
 
     @Override
