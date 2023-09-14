@@ -1,4 +1,4 @@
-package gun33_cucumber.tags.stepdefs;
+package gun33_cucumber_tags.tags.stepdefs;
 
 import io.cucumber.java.en.Given;
 
