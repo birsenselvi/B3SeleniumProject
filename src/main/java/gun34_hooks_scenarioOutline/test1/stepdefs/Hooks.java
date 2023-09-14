@@ -1,4 +1,4 @@
-package gun34_cucumber_hooks.test1.stepdefs;
+package gun34_hooks_scenarioOutline.test1.stepdefs;
 
 import io.cucumber.java.*;
 

@@ -1,7 +1,6 @@
-package gun34_cucumber_hooks.test2.stepdefs;
+package gun34_hooks_scenarioOutline.test1.stepdefs;
 
 import io.cucumber.java.en.Given;
-import org.testng.Assert;
 
 public class HooksSteps {
     @Given("hooks scenario {int} step {int}")
@@ -9,4 +8,5 @@ public class HooksSteps {
         System.out.println("Scenario " + scenario + ", Step " + step);
         //Assert.assertTrue(step<3);
     }
+
 }

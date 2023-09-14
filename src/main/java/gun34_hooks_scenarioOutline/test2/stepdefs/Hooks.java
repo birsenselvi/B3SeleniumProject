@@ -1,4 +1,4 @@
-package gun34_cucumber_hooks.test2.stepdefs;
+package gun34_hooks_scenarioOutline.test2.stepdefs;
 
 import io.cucumber.java.*;
 
@@ -18,6 +18,9 @@ public class Hooks {
     @AfterStep
     public void afterStep(Scenario scenario){
         System.out.println(scenario.getUri());
+        if (scenario.isFailed()){
+            // screenshot
+        }
     }
 
     @After
