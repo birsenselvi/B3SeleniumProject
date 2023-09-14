@@ -37,8 +37,17 @@ Feature: Scenario outline
       | Ali   | 34  | Istanbul |
       | Veli  | 45  | Adana    |
 
+  @so2
+  Scenario Outline: scenario outline 2
+    Given so scenario <scenariono> step <stepno1>
+    When  so login with the following data
+      | username | <username> |
+      | password | <password> |
+    Then so scenario <scenariono> step <stepno2>
 
-    
-
-
+    Examples:
+      | scenariono | stepno1 | stepno2 | username | password |
+      | 1          | 1       | 3       | admin    | pass1    |
+      | 2          | 1       | 3       | user     | pass2    |
+      | 3          | 1       | 3       | demo     | pass3    |
 
