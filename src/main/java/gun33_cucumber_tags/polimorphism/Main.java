@@ -1,7 +1,4 @@
-package gun33_cucumber.polimorphism;
-
-import org.openqa.selenium.TakesScreenshot;
-import utils.Driver;
+package gun33_cucumber_tags.polimorphism;
 
 import java.util.ArrayList;
 import java.util.List;

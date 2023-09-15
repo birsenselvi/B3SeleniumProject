@@ -1,4 +1,4 @@
-package gun33_cucumber;
+package gun33_cucumber_tags;
 
 import gun31_testNG_cucumber.cucumber._01Definition.Runner1;
 import gun32_cucumber.variables.Runner;

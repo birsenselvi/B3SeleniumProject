@@ -1,4 +1,4 @@
-package gun33_cucumber.polimorphism;
+package gun33_cucumber_tags.polimorphism;
 
 public class Class2 extends ClassBase{
 

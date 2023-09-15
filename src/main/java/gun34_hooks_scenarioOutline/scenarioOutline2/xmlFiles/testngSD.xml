@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite" parallel="tests">
+
+    <test verbose="2" preserve-order="true" name="Test_Chrome">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="gun34_hooks_scenarioOutline.scenarioOutline2.runners.RunnerSd"/>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true" name="Test_Edge">
+        <parameter name="browser" value="edge"/>
+        <classes>
+            <class name="gun34_hooks_scenarioOutline.scenarioOutline2.runners.RunnerSd"/>
+        </classes>
+    </test>
+</suite>
