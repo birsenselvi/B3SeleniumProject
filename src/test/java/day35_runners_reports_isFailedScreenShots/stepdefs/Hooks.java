@@ -12,7 +12,6 @@ public class Hooks {
         if(scenario.isFailed()){
             scenario.log(scenario.getName() + " failed");
             TakesScreenshot screenshot = (TakesScreenshot) Driver.getDriver();
-            Driver.getDriver().get("https://www.google.com");
             byte[] resim = screenshot.getScreenshotAs(OutputType.BYTES);
             scenario.attach(resim, "image/png", "Hata Resmi");
         }
