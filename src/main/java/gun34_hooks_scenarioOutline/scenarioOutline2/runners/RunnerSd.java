@@ -16,6 +16,7 @@ import utils.Driver;
         }
 )
 public class RunnerSd extends AbstractTestNGCucumberTests {
+
         public static ThreadLocal<String> browsers = new ThreadLocal<>();
 
         @BeforeTest

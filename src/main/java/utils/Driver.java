@@ -8,7 +8,6 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public class Driver {
 
     private static ThreadLocal<WebDriver> drivers = new ThreadLocal<>();
-    private static ThreadLocal<String> browsers = new ThreadLocal<>();
 
     public static WebDriver getDriver(){
         return getDriver("chrome");
