@@ -11,9 +11,9 @@ import io.cucumber.testng.CucumberOptions;
                 "html:target/cucumber/cucumber.html",
                 "json:target/cucumber/cucumber.json",
                 "testng:target/cucumber/cucumber.xml",
-                "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
+                "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"
         }
 
 )
-public class RunnerReport1 extends AbstractTestNGCucumberTests {
+public class AllureReport extends AbstractTestNGCucumberTests {
 }
