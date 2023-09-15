@@ -45,6 +45,12 @@
             <version>4.13.2</version>
         </dependency>
 
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-junit</artifactId>
+            <version>7.11.1</version>
+        </dependency>
+
         <!-- cucumber ile java'nin anlasmasi icin -->
         <dependency>
             <groupId>io.cucumber</groupId>
@@ -72,6 +78,12 @@
         </dependency>
 
         <dependency>
+            <groupId>tech.grasshopper</groupId>
+            <artifactId>extentreports-cucumber7-adapter</artifactId>
+            <version>1.13.0</version>
+        </dependency>
+
+        <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
             <version>2.15.2</version>
@@ -83,11 +95,6 @@
             <version>2.14.2</version>
         </dependency>
 
-        <dependency>
-            <groupId>tech.grasshopper</groupId>
-            <artifactId>extentreports-cucumber7-adapter</artifactId>
-            <version>1.13.0</version>
-        </dependency>
     </dependencies>
 
 </project>

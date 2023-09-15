@@ -43,5 +43,5 @@ import io.cucumber.testng.CucumberOptions;
         }
 
 )
-public class Runner1 extends AbstractTestNGCucumberTests {
+public class Runner1_cucumberOptions extends AbstractTestNGCucumberTests {
 }

@@ -3,7 +3,6 @@ package gun35_runners_reports.runners;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
-
 @CucumberOptions(
         features = {"aa"},
         glue = {"ggg"},
@@ -14,10 +13,11 @@ import io.cucumber.testng.CucumberOptions;
         }
 
 )
-public class Runner2 extends AbstractTestNGCucumberTests {
+public class Runner1_systemProperty extends AbstractTestNGCucumberTests {
         {
                 // System property'ye asagidaki degisken set edilirse
                 // diger cucumber options'lari system property'den okunur
+                // "cucumber.publish.quite"="true" olarak tanimlanmali
                 System.setProperty("cucumber.publish.quite", "true");
 
                 // cucumber.features : absolute path alir
