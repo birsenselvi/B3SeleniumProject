@@ -13,10 +13,12 @@ public class Hooks {
 
         if (scenario.isFailed()){
             scenario.log(scenario.getName() + " failled");
+            /*
             Driver.getDriver().get("https://google.com");
             TakesScreenshot screenshot = (TakesScreenshot) Driver.getDriver();
             byte[] resim = screenshot.getScreenshotAs(OutputType.BYTES);
             scenario.attach(resim, "image/png", "Hata Resmi");
+             */
         }
     }
 }
