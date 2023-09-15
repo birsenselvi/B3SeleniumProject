@@ -9,14 +9,14 @@ public class Driver {
 
     private static ThreadLocal<WebDriver> drivers = new ThreadLocal<>();
 
-
     public static WebDriver getDriver(){
         return getDriver("chrome");
     }
 
     public static WebDriver getDriver(String browser){
 
-        if (drivers.get() == null) {
+        if ( drivers.get() == null ) {
+
             switch (browser.toLowerCase()) {
                 case "edge":
                     drivers.set(new EdgeDriver());
@@ -27,6 +27,7 @@ public class Driver {
                 default:
                     drivers.set(new ChromeDriver());
             }
+
         }
         return drivers.get();
     }
