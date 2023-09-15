@@ -4,15 +4,25 @@ package day34_hooks_scenarioOutLine.scenarioOutline2TheradLocal.stepdefs;
 import day34_hooks_scenarioOutLine.scenarioOutline2TheradLocal.runnerTEkCesitrBrowserda.Runner;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+
+
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
 import utils.Driver;
 
 public class Hooks {
-    @Before
+
+
+     @Before
     public void before(){
-        Driver.getDriver(Runner.browsers.get());
+
+       Driver.getDriver(Runner.browsers.get());
     }
-    @After
+
+
+   @After
     public void after(){
+
         Driver.quit();
     }
 }

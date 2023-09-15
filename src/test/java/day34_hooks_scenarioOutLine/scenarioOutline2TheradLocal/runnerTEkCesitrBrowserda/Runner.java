@@ -15,7 +15,7 @@ features = {"src/test/java/day34_hooks_scenarioOutLine/scenarioOutline2TheradLoc
 )
 public class Runner extends AbstractTestNGCucumberTests {
 
-   public static  ThreadLocal<String> browsers = new ThreadLocal<>();
+  public static  ThreadLocal<String> browsers = new ThreadLocal<>();
     @BeforeTest
     @Parameters("browser")
     public void beforeTest(@Optional("Chrome") String browser){
