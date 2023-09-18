@@ -1,0 +1,7 @@
+1. Yeni bir proje olusturun
+2. Projede TestNG, Cucumber, ExtentReport kullanilacak
+3. features, stepdefs, runners, pageobjects ve utils packageleriniz olsun
+4. Proje Cucumber ile yapilacak, TestNG Runner kullanilacak
+5. Ekteki excel dosyasinda verilen 5 adet Test Senaryosunu bir Feature icinde 5 farkli senaryo olarak yaziniz.
+6. Extent Reportda, Senaryo fail olursa Hooks'da ekran kaydi alacak sekilde planlayiniz.
+7. Scenariolar Runner ile run edilecek.

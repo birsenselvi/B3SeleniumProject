@@ -16,4 +16,5 @@ import io.cucumber.testng.CucumberOptions;
 
 )
 public class AllureReport extends AbstractTestNGCucumberTests {
+
 }
