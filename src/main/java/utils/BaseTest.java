@@ -148,6 +148,5 @@ public class BaseTest {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
     }
 }
